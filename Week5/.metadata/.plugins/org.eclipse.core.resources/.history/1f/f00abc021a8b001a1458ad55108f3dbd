@@ -1,0 +1,46 @@
+package w5;
+
+public class checkPrimeNumber implements Runnable {
+    private final Buffer sharedLocation;
+
+    public checkPrimeNumber(Buffer shared) {
+        sharedLocation = shared;
+    }
+    public static boolean isPrime(int x) {
+      if(x < 2)
+    	  return false;
+      if(x==2)
+      {
+    	  return true
+      }
+      for(int i=2 ; i<=Math.sqrt(x); i++)
+      {
+    	  if(x%i==0)
+    		  return false;
+      }
+      return true;
+    }
+    @Override
+    public void run() {
+        try {
+
+            while (true) {
+                if (sharedLocation.isTerminate()) {
+                    break;
+                }
+             if(checkPrimeNumber.isPrime(sharedLocation.get()))
+             {
+            	 System.out.println(sharedLocation.get() + " Prime");
+             }
+             else
+             {
+            	 System.out.println(sharedLocation.get()+ " Not Prime");
+             }
+            }
+        } catch (InterruptedException ex) {
+            ex.printStackTrace();
+        }
+
+    }
+}
+

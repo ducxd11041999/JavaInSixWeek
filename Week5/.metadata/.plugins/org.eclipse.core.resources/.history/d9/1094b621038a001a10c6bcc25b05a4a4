@@ -1,0 +1,46 @@
+package example4;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+public class SyncExample {
+    public static Object lockObject = new Object();
+    public static int x;
+    public static int y;
+    private static class Thread1 extends Thread {
+        
+        
+        @Override
+        public void run() {
+            synchronized (lockObject) {
+                x = y = 0;
+            try {
+                sleep(1000);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(SyncExample.class.getName()).log(Level.SEVERE, null, ex);
+            }
+                System.out.println(x);
+            }
+        }
+    }
+    private static class Thread2 extends Thread {
+        
+        
+        @Override
+        public void run() {
+            synchronized (lockObject) {
+                x = y = 1;
+            try {
+                sleep(1000);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(SyncExample.class.getName()).log(Level.SEVERE, null, ex);
+            }
+                System.out.println(y);
+            }
+        }
+    }
+    public static void main(String[] args) {
+        new Thread1().start();
+        new Thread2().start();
+    }
+}

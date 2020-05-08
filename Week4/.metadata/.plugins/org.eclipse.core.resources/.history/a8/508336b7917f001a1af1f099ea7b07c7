@@ -1,0 +1,29 @@
+package w4;
+import java.awt.BorderLayout;
+import java.awt.Color;
+/*from   ww w.j  av  a2s . c  om*/
+import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+
+public class GridDemo {
+  public static void main(String args[]) {
+    JFrame frame = new JFrame();
+    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+    Object rowData[][] = { { "", "", "" },
+        { "", "", "" },
+        { "", "", "" }};
+    Object columnNames[] = { "Column One", "Column Two", "Column Three" };
+    final JTable table = new JTable(rowData, columnNames);
+
+    
+    JScrollPane scrollPane = new JScrollPane(table);
+
+    frame.add(scrollPane, BorderLayout.CENTER);
+    frame.setSize(300, 150);
+    frame.setVisible(true);
+    
+    table.setGridColor(Color.red);
+  }
+}

@@ -1,0 +1,51 @@
+package myFame;
+import java.awt.*;
+import java.awt.event.*;
+public class MicroWave_Gui extends Frame {
+	Button btn[];
+	Panel panel;
+	Label l1;
+	TextField tf;
+	GridBagLayout gb;
+	GridBagConstraints gbc;
+	String str[]={"Stop","Start","0","1", "2", "3", "4", "5", "6", "7", "8", "9"};
+	public MicroWave_Gui(String title)
+	{
+		super(title);
+	
+		
+		panel = new Panel();
+	    panel.setBounds(0, 0, 120, 300);
+	    panel.setBackground(Color.gray);
+	    l1 = new Label("Food to be placed here");
+	    add(panel);
+		//setLayout(new GridLayout(4,4));
+	    /*
+	    btn = new Button[str.length];
+	    for (int i=str.length - 1; i>=0;i--)
+	    {	
+	    	btn[i]=new Button(str[i]);
+	        add(btn[i]);
+	    }
+	  */
+	}
+	public void addComponent(Component c, int row, int col, int nrow, int ncol)
+	    {
+	    gbc.gridx=col;
+	    gbc.gridy=row;
+	    
+	    gbc.gridwidth=ncol;
+	    gbc.gridheight=ncol;
+	    
+	    gb.setConstraints(c,gbc);
+	    add(c);
+	    }
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		MicroWave_Gui MW = new MicroWave_Gui("The Front View of a Microwave Oven");
+		MW.setSize(300, 300);
+		MW.setLayout(null);
+		MW.show();
+	}
+
+}

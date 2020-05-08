@@ -1,0 +1,14 @@
+package w4;
+import java.awt.Color;
+
+import javax.swing.JTable;
+
+public class GridDemo {
+  public static void main(String[] argv) throws Exception {
+
+    JTable table = new JTable();
+
+    table.setGridColor(Color.red);
+
+  }
+}

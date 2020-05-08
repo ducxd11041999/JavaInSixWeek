@@ -1,0 +1,31 @@
+package myFrame;
+import java.awt.*;
+public class DrawingDemo extends Frame {
+	int x1[] = {50 , 75 , 95, 115 ,135};
+	int y1[] = {50, 30 ,60 ,75 , 60};
+	int x2[] = {67, 82 ,95, 120, 135};
+	int y2[] = {150 , 130 ,160 , 155 , 180};
+	Graphics g;
+	public DrawingDemo()
+	{
+		super("Drawing PolyLines Demo");
+		setSize(300, 300);
+		setVisible(true);
+	}
+	public void Paint_Polyline(Graphics g)
+	{
+			g.drawPolyline(x1 , y1 , 5);
+			g.setFont(new Font("Times Roman", Font.BOLD, 15));
+			g.drawString("Current Color is black",100 , 100);
+			g.setColor(Color.blue);
+			g.drawPolyline(x2 , y2 , 5);
+			g.drawString("Current Color is blue",100 , 200);
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		DrawingDemo draw = new DrawingDemo();
+		draw.Paint_Polyline();
+
+	}
+
+}

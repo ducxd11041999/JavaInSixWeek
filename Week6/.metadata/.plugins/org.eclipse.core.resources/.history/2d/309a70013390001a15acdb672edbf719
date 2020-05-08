@@ -1,0 +1,43 @@
+package w6;
+
+import java.io.*;
+import java.net.*;
+import java.util.*;
+
+class ServerClass 
+{
+	public static void main(String[] args) throws Exception
+	{
+		ServerSocket server=new ServerSocket(8080);//cổng trùng với cổng ở Client
+		System.out.println("Server chờ kết nối ở cổng 8080....");
+
+		Socket client=server.accept();
+		System.out.println("Kết Nối Thành Công.");
+		PrintWriter pw=new PrintWriter(client.getOutputStream());
+		BufferedReader br=new BufferedReader(new 									InputStreamReader(client.getInputStream()));
+		String st="";
+
+		//Nhận chuỗi bất kỳ được gửi từ bàn phím
+		st=br.readLine();
+		
+		//Tiến hành thay thế chuỗi, hàm thay thế được viết bên dưới
+		st=ThayThe(st);
+
+		//Gửi trả lại chuỗi sau khi đã thay thế về cho Máy Khách
+		pw.write(st);
+		pw.write("\n");
+		pw.flush();
+
+		//Kết thúc chương trình
+		br.close();
+    	pw.close();
+    		client.close();
+	}
+		public static String ThayThe(String st)
+	{
+		String sTim = "Dai Hoc";
+			String sThayThe = "DH";
+			st = st.replaceAll(sTim,sThayThe);
+			return st;
+		}
+}

@@ -1,0 +1,23 @@
+package myFame;
+import java.awt.*;
+import java.awt.event.*;
+public class Puzzle extends Frame{
+	String str[]={"1", "2", "3", "4", "5", "6", "7", "8", "9"};
+	public Puzzle()
+	{
+		super("Puzzle");
+		setLayout(new GridLayout(4,4));
+	    Button btn[] = new Button[16];
+	    for (int i=0; i<16;i++)
+	    {	
+	    	btn[i]=new Button(str[i]);
+	        add(btn[i]);
+	    }
+		
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

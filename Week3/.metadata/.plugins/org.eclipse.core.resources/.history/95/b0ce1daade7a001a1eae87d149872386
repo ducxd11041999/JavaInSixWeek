@@ -1,0 +1,71 @@
+package myFrame;
+import java.awt.*;
+import javax.swing.*;
+import java.util.concurrent.TimeUnit;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+public class drawClock extends JFrame{
+		 
+	 int hours = 0 , minute = 0 , second = 0;
+	 int center[] = {300,300};
+	 int movePostionHours[] = {300, 200};
+	 int movePostionSeconds[] = {310, 180};
+	 public drawClock(String ti) {
+	        super(ti);
+	        setSize(600,600);  
+	        setVisible(true); 
+	 }
+	 public void paint(Graphics g) {  
+	        g.drawArc(100, 100, 400,400,0,360);
+	        g.setColor(Color.red);
+	        g.setFont(new Font("Times Roman", Font.BOLD, 13));
+	        g.drawString("12",295,120);
+	        g.setColor(Color.red);
+	        g.setFont(new Font("Times Roman", Font.BOLD, 13));
+	        g.drawString("6",295,490);
+	        g.setColor(Color.red);
+	        g.setFont(new Font("Times Roman", Font.BOLD, 13));
+	        g.drawString("3",485,300);
+	        g.setColor(Color.red);
+	        g.setFont(new Font("Times Roman", Font.BOLD, 13));
+	        g.drawString("9",110,300);
+	        
+	        moveHours(g);
+	        try {
+				moveSecond(g);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	    }
+	 public void moveHours(Graphics g)
+	 {
+		 Graphics2D g2 = (Graphics2D) g;
+		 g2.setColor(Color.blue);
+		 g2.setStroke(new BasicStroke(3));
+		 g2.drawLine((int)center[0], (int)center[1], (int)movePostionHours[0] , (int)movePostionHours[1] );
+	 }
+	 public static void myTask() {
+		    System.out.println("Running");
+		}
+	 public void moveSecond(Graphics g) throws InterruptedException
+	 {
+		 Graphics2D g2 = (Graphics2D) g;
+		 g2.setColor(Color.yellow);
+		 g2.setStroke(new BasicStroke(3));
+		 g2.drawLine(center[0], center[1], movePostionSeconds[0] , movePostionSeconds[1]);
+		 for(int second = 0; second < 60 ; second++)
+		 {
+			 this.validate();
+			 g2.drawLine(center[0], center[1], movePostionSeconds[0]+second*5 , movePostionSeconds[1]);
+			 TimeUnit.SECONDS.sleep(1);
+			
+		 }
+	 }
+	 public static void main(String[] args) {  
+	        drawClock m=new drawClock("Clock");  
+	     
+	         
+	    }  
+
+}

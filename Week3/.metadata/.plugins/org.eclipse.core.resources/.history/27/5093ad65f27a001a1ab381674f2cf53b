@@ -1,0 +1,63 @@
+package myFrame;
+
+import java.awt.*; 
+import javax.swing.*; 
+import java.awt.event.*; 
+class SelectColor extends JFrame  implements ActionListener{ 
+  
+    JRadioButton jRadioButton1; 
+    JRadioButton jRadioButton2; 
+    JRadioButton jRadioButton3; 
+    JRadioButton jRadioButton4; 
+    ButtonGroup G1; 
+    JLabel L1; 
+  
+    public SelectColor() 
+    { 
+    	this.setSize(300, 300);
+        jRadioButton1 = new JRadioButton(); 
+        jRadioButton2 = new JRadioButton(); 
+        jRadioButton3 = new JRadioButton(); 
+        jRadioButton4 = new JRadioButton(); 
+        
+        jRadioButton1.setText("Red"); 
+        jRadioButton2.setText("Blue");
+        jRadioButton3.setText("Green"); 
+        jRadioButton4.setText("Black");
+        
+        jRadioButton1.setBounds(120, 30, 150, 20); 
+        jRadioButton2.setBounds(120, 60, 150,20);
+        jRadioButton3.setBounds(120, 90, 150, 20); 
+        jRadioButton4.setBounds(120, 120, 150,20);
+        G1 = new ButtonGroup(); 
+        
+        this.add(jRadioButton2); 
+        this.add(jRadioButton1); 
+        this.add(jRadioButton4); 
+        this.add(jRadioButton3); 
+        
+        this.setLayout(null);
+        G1.add(jRadioButton1); 
+        G1.add(jRadioButton2); 
+        G1.add(jRadioButton3); 
+        G1.add(jRadioButton4);
+    }
+
+	@Override
+	public void actionPerformed(ActionEvent ae) {
+		// TODO Auto-generated method stub
+		if()
+	} 
+} 
+  
+class RadioButton {  
+    public static void main(String args[]) 
+    {
+    	SelectColor f = new SelectColor(); 
+        f.setBounds(100, 100, 400, 200); 
+        f.setTitle("RadioButtons"); 
+  
+        // Setting Visible status of frame as true. 
+        f.setVisible(true); 
+    } 
+} 

@@ -1,0 +1,70 @@
+package w4;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import java.util.ArrayList;
+import java.util.Random;
+
+public class Puzzle extends JFrame implements ActionListener {
+	Button btn[];
+	int checkBlank = 0;
+	ArrayList<Integer> dayso = new ArrayList<Integer>();
+	public Puzzle(String title)
+	{
+		super(title);
+		setLayout(new GridLayout(4,4));
+	    btn = new Button[16];
+	    for(int i = 0; i<=15;i++)
+	    {
+	    	dayso.add(i);
+	    }   	
+	    for (int i = 15; i>0;i--)
+	    {	
+	    		Random rd = new Random();
+	    		int tmp = rd.nextInt(i);
+	    		//System.out.println(tmp);
+	    		btn[i] = new Button(dayso.get(tmp+1).toString());
+	    		dayso.remove(tmp+1);
+	    		add(btn[i]);
+	    }
+	    btn[0] = new Button();
+	    add(btn[0]);
+	    for(int i = 0; i<16; i++)
+	    {
+	    	btn[i].addActionListener(this);
+	    }
+	}
+
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+			Puzzle pu = new Puzzle("Puzzle");
+			pu.setSize(400,400);
+			pu.setDefaultCloseOperation(EXIT_ON_CLOSE);
+			//pu.pack();
+			pu.setVisible(true);
+			pu.show();
+	}
+	@Override
+	public void actionPerformed(ActionEvent ae) {
+		// TODO Auto-generated method stub
+		if(ae.getSource() == btn[0])
+		{
+			String st = btn[0].getLabel();
+			btn[0].setLabel("");
+			btn[checkBlank].setLabel(st);
+			checkBlank = 0;
+			
+		}
+		if(ae.getSource() == btn[0])
+		{
+			String st = btn[0].getLabel();
+			btn[0].setLabel("");
+			btn[checkBlank].setLabel(st);
+			checkBlank = 0;
+			
+		}
+		
+	}
+
+}

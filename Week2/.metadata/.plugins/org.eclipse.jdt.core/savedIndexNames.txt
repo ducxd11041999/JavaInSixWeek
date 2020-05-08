@@ -1,0 +1,11 @@
+INDEX VERSION 1.131+E:\ChangeWorld\[Courses]Java\Src\Week2\.metadata\.plugins\org.eclipse.jdt.core
+1552461506.index
+2717393524.index
+1341539160.index
+753031757.index
+2872044937.index
+1723734616.index
+2995179502.index
+3313631096.index
+1067235287.index
+3607040738.index

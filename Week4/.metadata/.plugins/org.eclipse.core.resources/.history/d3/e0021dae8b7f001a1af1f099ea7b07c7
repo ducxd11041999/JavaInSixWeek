@@ -1,0 +1,63 @@
+package w4;
+
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+public class DemoFLowLayout {
+   private JFrame mainFrame;
+   private JLabel headerLabel;
+   private JLabel statusLabel;
+   private JPanel controlPanel;
+   private JLabel msglabel;
+
+   public DemoFLowLayout(){
+      prepareGUI();
+   }
+
+   public static void main(String[] args){
+	   DemoFLowLayout swingLayoutDemo = new DemoFLowLayout();  
+      swingLayoutDemo.showFlowLayoutDemo();       
+   }
+      
+   private void prepareGUI(){
+      mainFrame = new JFrame("Vi du Java Swing");
+      mainFrame.setSize(600,50);
+      mainFrame.setLayout(new GridLayout(2, 1));
+
+      headerLabel = new JLabel("",JLabel.CENTER );
+      statusLabel = new JLabel("",JLabel.CENTER);        
+
+      statusLabel.setSize(350,100);
+      mainFrame.addWindowListener(new WindowAdapter() {
+         public void windowClosing(WindowEvent windowEvent){
+            System.exit(0);
+         }        
+      });    
+      controlPanel = new JPanel();
+      controlPanel.setLayout(new FlowLayout());
+
+  
+      mainFrame.add(controlPanel);
+      mainFrame.add(statusLabel);
+      mainFrame.setVisible(true);  
+   }
+
+   private void showFlowLayoutDemo(){
+          
+      JPanel panel = new JPanel();
+      panel.setBackground(Color.darkGray);
+      panel.setSize(300,30);
+      FlowLayout layout = new FlowLayout();
+      layout.setHgap(10);              
+      layout.setVgap(10);
+      panel.setLayout(layout);        
+      panel.add(new JButton("Button1"));
+      panel.add(new JButton("Button1"));       
+      panel.add(new JButton("Button1"));
+      panel.add(new JButton("Button1")); 
+      controlPanel.add(panel);
+
+      mainFrame.setVisible(true);  
+   }
+}

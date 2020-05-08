@@ -1,0 +1,35 @@
+package myFame;
+import java.awt.*;
+import java.awt.event.*;
+public class Puzzle extends Frame{
+	Button btn1 = new Button("1");
+	Button btn2 = new Button("2");
+	Button btn3 = new Button("3");
+	Button btn4 = new Button("4");
+	Button btn5 = new Button("5");
+	Button btn6 = new Button("6");
+	Button btn7 = new Button("7");
+	Button btn8 = new Button("8");
+	Button btn9 = new Button("9");
+	Button btn10 = new Button("10");
+	Button btn11 = new Button("11");
+	Button btn12 = new Button("12");
+	Button btn13 = new Button("13");
+	Button btn14 = new Button("14");
+	Button btn15 = new Button("15");
+	Button btn16 = new Button("16");
+	
+	public Puzzle()
+	{
+		super(title);
+		setLayout(new GridLayout(4,4));
+	    btn=new Button[16];
+	    for (int i=0; i<16;i++)
+		
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

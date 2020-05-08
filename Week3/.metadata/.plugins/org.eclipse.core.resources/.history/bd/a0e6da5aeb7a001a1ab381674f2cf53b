@@ -1,0 +1,27 @@
+package myFrame;
+import java.awt.*;
+import java.awt.event.*;
+public class MyFrame extends Frame {
+
+	public MyFrame(String title)
+	{
+		super(title);
+		setSize(300,400);
+		setVisible(true);
+		addWindowListener(new WindowAdapter()
+				{
+					@Override
+					public void windowClosing(WindowEvent e)
+					{
+						super.windowClosing(e);
+						System.exit(0);
+					}
+				});
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new MyFrame("This Is My Frame");
+
+	}
+
+}

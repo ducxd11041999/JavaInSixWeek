@@ -1,0 +1,14 @@
+package w5;
+
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+public class Result {
+    public static void main(String[] args) {
+        ExecutorService app = Executors.newCachedThreadPool();
+        Buffer sharedLocation = new SynchronizedBuffer();
+        app.execute(new createNumber(sharedLocation));
+        app.execute(new SumPrime(sharedLocation));
+        app.shutdown();
+    }
+}

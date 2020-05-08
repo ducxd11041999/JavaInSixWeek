@@ -1,0 +1,58 @@
+package myFame;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import javax.swing.BorderFactory;
+import javax.swing.border.EtchedBorder;
+public class MicroWave_Gui extends JFrame {
+	JButton btn[];
+	JPanel panel, panel2, panel1;
+	JLabel l1;
+	TextField tf;
+	GridBagLayout gb;
+	GridBagConstraints gbc;
+	String str[]={"Stop","Start","0","1", "2", "3", "4", "5", "6", "7", "8", "9"};
+	public MicroWave_Gui(String title)
+	{
+		super(title);
+		panel = new JPanel();
+	    panel.setBounds(0, 0, 160, 300);
+	    panel.setBackground(Color.gray);
+	    l1 = new JLabel();
+	    l1.setText("abc");
+	    l1.setBounds(100, 150, 150, 20);
+	    l1.setFont(new Font("Times Roman", Font.PLAIN, 13));
+	    panel.add(l1);
+	    panel.setBorder(BorderFactory.createBevelBorder(EtchedBorder.LOWERED));
+	    add(panel);
+	    /*panel 1 time to displayed here*/
+	    panel1 = new JPanel();
+	    panel1.setBounds(160, 0, 240, 20);
+	    panel1.setBackground(Color.gray);
+	    panel1.setBorder(BorderFactory.createBevelBorder(EtchedBorder.RAISED));
+	    add(panel2);
+	    /*panel 2 button*/
+	    panel2 = new JPanel();
+	    panel2.setBounds(160, 20, 240, 300);
+	    panel2.setBackground(Color.gray);
+	    panel2.setBorder(BorderFactory.createBevelBorder(EtchedBorder.RAISED));
+	    add(panel2);
+		panel2.setLayout(new GridLayout(4,4));
+	    btn = new JButton[str.length];
+	  
+	    for (int i=str.length - 1; i>=0;i--)
+	    {	
+	    	btn[i]=new JButton(str[i]);
+	        panel2.add(btn[i]);
+	    }
+	  
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		MicroWave_Gui MW = new MicroWave_Gui("The Front View of a Microwave Oven");
+		MW.setSize(400, 300);
+		MW.setLayout(null);
+		MW.show();
+	}
+
+}

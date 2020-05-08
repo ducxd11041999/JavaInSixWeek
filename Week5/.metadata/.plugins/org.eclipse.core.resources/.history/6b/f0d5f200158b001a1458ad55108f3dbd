@@ -1,0 +1,32 @@
+package w5;
+
+public class createNumber implements Runnable {
+
+    private final Buffer sharedLocation;
+    private int i = 0;
+
+    public createNumber(Buffer shared) {
+        sharedLocation = shared;
+    }
+
+    @Override
+    public void run() {
+        try {
+            for (int n = 100; n < 1000; n++) {
+
+                if (isPrime(n)) {
+                    sharedLocation.set(n);
+                    System.out.printf("%5d  ", n);
+                    if ((++i) % 10 == 0) {
+                        System.out.println("");
+                    }
+                }
+            }
+            sharedLocation.setTerminate(true);
+            sharedLocation.set(0);
+        } catch (InterruptedException exception) {
+            exception.printStackTrace();
+        }
+    }
+}
+

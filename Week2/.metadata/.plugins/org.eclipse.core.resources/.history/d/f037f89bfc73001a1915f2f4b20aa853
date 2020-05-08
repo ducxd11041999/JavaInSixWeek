@@ -1,0 +1,78 @@
+package BT4;
+import java.util.Random;
+public class BT4Class {
+
+	public BT4Class() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		HinhActions []h = new HinhActions[30];
+		
+		for(int i = 0 ; i < 10 ;)
+		{
+			//h[i] = new HinhTron(i); // set i is radius 
+			while(true)
+			{
+				Random	rd = new Random();
+				int ele = rd.nextInt() % 30;
+				if(h[ele] != null)
+				{
+					h[ele] = new HinhTron(ele);
+					break;
+				}
+			}
+		}
+		for(int i = 0 ; i < 10 ;)
+		{
+			//h[i] = new HinhTron(i); // set i is radius 
+			while(true)
+			{
+				Random	rd = new Random();
+				int ele = rd.nextInt() % 30;
+				if(h[ele] != null)
+				{
+					h[ele] = new HinhChuNhat(ele, ele + 1);
+					break;
+				}
+			}
+		}
+		for(int i = 0 ; i < 10 ;)
+		{
+			//h[i] = new HinhTron(i); // set i is radius 
+			while(true)
+			{
+				Random	rd = new Random();
+				int ele = rd.nextInt() % 30;
+				if(h[ele] != null)
+				{
+					h[ele] = new HinhElipse(ele);
+					break;
+				}
+			}
+		}
+		/*
+		for(int i = 0 ; i < 10 ; i++)
+		{
+			h[i+10] = new HinhChuNhat(i, i+2); // set i is weight and i+1 is height
+		}
+		for(int i = 0 ; i < 10 ; i++)
+		{
+			h[i+20] = new HinhEclipse(i, i+2, i, i+1); // set i is value of hinh eclips
+		}
+		*/
+		
+		/// output of Hinh
+		
+		for (int i =0 ; i< 30 ;i++)
+		{
+			System.out.print(h[i].getName() +" "+ i +"\n");
+			h[i].ChuVi();
+			System.out.print("\n");
+			h[i].DienTich();
+			System.out.print("\n");
+		}
+	}
+
+}

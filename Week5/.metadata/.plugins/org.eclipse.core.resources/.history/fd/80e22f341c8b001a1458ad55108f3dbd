@@ -1,0 +1,29 @@
+package w5;
+
+import java.util.Random;
+
+public class createNumber implements Runnable {
+    private final Buffer sharedLocation;
+    public createNumber(Buffer shared) {
+        sharedLocation = shared;
+    }
+    @Override
+    public void run() {
+        try {
+           while(true){
+        	   		Random rd = new Random();
+        	   		int n = rd.nextInt(100);
+        	   		Thread.sleep(1000);
+        	   		System.out.println(n);
+        	   		sharedLocation.set(n);  
+        	   		notify();
+                   // sharedLocation.setTerminate(true);
+                   //sharedLocation.set(0);   
+            }
+           
+        } catch (InterruptedException exception) {
+            exception.printStackTrace();
+        }
+    }
+}
+

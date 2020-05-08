@@ -1,0 +1,21 @@
+package w4;
+import javax.swing.*;
+import java.awt.*;
+public class FlowLayoutDemo extends JFrame{
+	public FlowLayoutDemo() {
+		FlowLayout layout = new FlowLayout(); 
+		Container c = getContentPane();
+		c.setLayout(layout);
+		c.add(new JButton("Button 1"));
+		c.add(new JButton("Button 2")); 
+		c.add(new JButton("Button 3"));
+		c.add(new JButton("Long-Named Button 4"));
+		c.add(new JButton("5"));
+	}
+	public static void main (String[] args) {
+		FlowLayoutDemo fr = new FlowLayoutDemo();
+		fr.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		fr.pack();
+		fr.setVisible(true);
+	} 
+}

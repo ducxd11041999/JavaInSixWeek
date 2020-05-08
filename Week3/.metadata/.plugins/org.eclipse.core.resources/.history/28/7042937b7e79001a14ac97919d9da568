@@ -1,0 +1,21 @@
+package myFrame;
+import java.awt.*;
+public class DrawingDemo extends Frame {
+	public DrawingDemo()
+	{
+		int x1[] = {50 , 75 , 95, 115 ,135};
+		int x2[] = {50, 30 ,60 ,75 , 60};
+		super("Drawing Demo");
+		setSize(300, 300);
+		setVisible(true);
+	}
+	public void Paint(Graphics g)
+	{
+		
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

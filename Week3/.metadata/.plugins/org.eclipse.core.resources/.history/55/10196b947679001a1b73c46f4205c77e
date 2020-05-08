@@ -1,0 +1,17 @@
+package myFrame;
+import java.awt.*;
+import java.awt.event.*;
+
+class evtframe extends Frame implements 
+ActionListener {
+
+	Label lab = new Label("Enter a number");
+	TextField tfl = new  TextField(5);
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

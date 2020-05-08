@@ -1,0 +1,101 @@
+package myFrame;
+
+import java.awt.*; 
+import javax.swing.*; 
+import java.awt.event.*; 
+class SelectColor extends JFrame  implements ActionListener{ 
+  
+    JRadioButton jRadioButton1; 
+    JRadioButton jRadioButton2; 
+    JRadioButton jRadioButton3; 
+    JRadioButton jRadioButton4; 
+    ButtonGroup G1; 
+    JLabel L1, L2;
+    JPanel Pa, pa;
+    public SelectColor() 
+    { 
+    	this.setSize(200, 350);
+        jRadioButton1 = new JRadioButton(); 
+        jRadioButton2 = new JRadioButton(); 
+        jRadioButton3 = new JRadioButton(); 
+        jRadioButton4 = new JRadioButton(); 
+        
+        jRadioButton1.setText("Red"); 
+        jRadioButton2.setText("Blue");
+        jRadioButton3.setText("Green"); 
+        jRadioButton4.setText("Black");
+        
+        jRadioButton1.setBounds(60, 30, 150, 20); 
+        jRadioButton2.setBounds(60, 60, 150,20);
+        jRadioButton3.setBounds(60, 90, 150, 20); 
+        jRadioButton4.setBounds(60, 120, 150,20);
+        G1 = new ButtonGroup(); 
+        Pa = new JPanel();
+        Pa.setBounds(0,150,300,50);
+        this.add(Pa);
+        //Pa.setBackground(Color.red);
+        L1 = new  JLabel();
+        L1.setBounds(80, 160, 150 ,30);
+        L1.setOpaque(true);
+        this.add(L1);
+        this.add(Pa);
+      
+        this.add(jRadioButton2); 
+        this.add(jRadioButton1); 
+        this.add(jRadioButton4); 
+        this.add(jRadioButton3); 
+        
+        this.setLayout(null);
+        G1.add(jRadioButton1); 
+        G1.add(jRadioButton2); 
+        G1.add(jRadioButton3); 
+        G1.add(jRadioButton4);
+        jRadioButton1.addActionListener(this);          
+        jRadioButton3.addActionListener(this);
+        jRadioButton2.addActionListener(this);          
+        jRadioButton4.addActionListener(this);
+    }
+
+	@Override
+	public void actionPerformed(ActionEvent ae) {
+		// TODO Auto-generated method stub
+		if(ae.getSource() == jRadioButton1)
+		{
+			 Pa.setBackground(Color.red);
+			//.setBackground(Color.red);
+			 L1.setText("Red is selected");
+		}
+		else if(ae.getSource() == jRadioButton2)
+		{
+			 Pa.setBackground(Color.blue);
+			// pa.setBackground(Color.blue);
+			 L1.setText("Blue is selected");
+		}
+		else if(ae.getSource() == jRadioButton3)
+		{
+			 Pa.setBackground(Color.green);
+			 //pa.setBackground(Color.green);
+			 L1.setText("Green is selected");
+			 
+		}
+		else
+		{
+			 Pa.setBackground(Color.black);
+			// pa.setBackground(Color.black);
+			 L1.setText("Back is selected");
+		}
+	} 
+	
+} 
+  
+class RadioButton {  
+    public static void main(String args[]) 
+    {
+    	SelectColor f = new SelectColor(); 
+        f.setBounds(100, 100, 300, 200); 
+        f.setTitle("RadioButtons"); 
+  
+        // Setting Visible status of frame as true. 
+        f.setVisible(true); 
+    } 
+} 

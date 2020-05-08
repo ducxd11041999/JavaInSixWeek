@@ -1,0 +1,16 @@
+package w5;
+
+public class SharedData {
+    int time;
+
+    public SharedData() {
+    }
+
+    public int getRad() {
+        return time;
+    }
+
+    public void setRad(int time) {
+        this.time = time;
+    }
+}

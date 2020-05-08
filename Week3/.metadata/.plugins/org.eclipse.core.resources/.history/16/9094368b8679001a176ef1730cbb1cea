@@ -1,0 +1,27 @@
+package myFame;
+import java.awt.*;
+import java.awt.event.*;
+public class Puzzle extends Frame{
+
+	Button btn1 = new Button("Doubelis");
+	Button btn2 = new Button("Doubelis");
+	Button btn3 = new Button("Doubelis");
+	Button btn4 = new Button("Doubelis");
+	Button btn5 = new Button("Doubelis");
+	Button btn6 = new Button("Doubelis");
+	Button btn7 = new Button("Doubelis");
+	Button btn8 = new Button("Doubelis");
+	Button btn9 = new Button("Doubelis");
+	Button btn10 = new Button("Doubelis");
+	Button btn11 = new Button("Doubelis");
+	Button btn12 = new Button("Doubelis");
+	Button btn13 = new Button("Doubelis");
+	Button btn14 = new Button("Doubelis");
+	Button btn15 = new Button("Doubelis");
+	Button btn16 = new Button("Doubelis");
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

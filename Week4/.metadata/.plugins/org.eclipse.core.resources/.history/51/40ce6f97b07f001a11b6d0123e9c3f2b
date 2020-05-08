@@ -1,0 +1,74 @@
+package w4;
+
+import java.awt.*; 
+import javax.swing.*; 
+import java.awt.event.*; 
+public class CalDemo extends JFrame implements ActionListener{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	JTextField tf1, tf2;
+	JPanel pa, Pa, Pa1;
+	JLabel l1, l2, l3 ;
+	JButton btn1, btn2, btn3, btn4;
+	float fresult;
+	public CalDemo()
+	{
+		this.setSize(300,200);
+		//this.setLayout(new GridLayout(2, 4));
+		pa = new JPanel();
+		pa.setBounds(0, 0, 70, 70);
+		tf1 = new JTextField("x=");
+		tf1.setBounds(50, 20, 50, 50);;
+		tf2 = new JTextField("x=");
+		tf2.setBounds(120, 20, 50, 50);;
+		this.add(tf1);
+		this.add(pa);
+		
+		this.add(tf2);
+	
+		
+		/*
+	    btn1.addActionListener(this);          
+        btn2.addActionListener(this);
+        btn3.addActionListener(this);          
+        btn4.addActionListener(this);*/
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		CalDemo f = new CalDemo(); 
+        //f.setBounds(100, 100, 300, 200); 
+        f.setTitle("RadioButtons"); 
+  
+        // Setting Visible status of frame as true. 
+        f.setVisible(true); 
+
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent ae) {
+		// TODO Auto-generated method stub
+		if(ae.getSource() == btn1)
+		{	
+			fresult = Float.parseFloat(tf1.getText()) +  Float.parseFloat(tf2.getText());
+			l3.setText("x + y = " + fresult);
+		}
+		else if(ae.getSource() == btn2)
+		{	
+			fresult = Float.parseFloat(tf1.getText()) -  Float.parseFloat(tf2.getText());
+			l3.setText("x - y = " + fresult);
+		}else if(ae.getSource() == btn3)
+		{	
+			fresult = Float.parseFloat(tf1.getText()) *  Float.parseFloat(tf2.getText());
+			l3.setText("x * y = " + fresult);
+		}
+		else
+		{	
+			fresult = Float.parseFloat(tf1.getText()) /  Float.parseFloat(tf2.getText());
+			l3.setText("x / y = " + fresult);
+		}
+	}
+
+}

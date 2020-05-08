@@ -1,0 +1,20 @@
+package myFrame;
+import java.awt.*;
+import javax.swing.*;
+public class drawClock extends JFrame{
+	 public drawClock(String ti) {
+	        super(ti);
+	        setSize(600,600);  
+	        setVisible(true); 
+	 }
+	 public void paint(Graphics g) {  
+	        g.drawArc(100, 100, 400,400,0,360);
+	        g.drawString("12",295,120);
+	          
+	    }  
+	 public static void main(String[] args) {  
+	        drawClock m=new drawClock("Clock");  
+	         
+	    }  
+
+}

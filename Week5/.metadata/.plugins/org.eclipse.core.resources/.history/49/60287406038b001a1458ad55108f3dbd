@@ -1,0 +1,37 @@
+package w5;
+
+import java.util.Random;
+
+public class FiveThreads extends Thread {
+	 
+    public FiveThreads() {
+    }
+ 
+    @Override
+    public void run() {
+        System.out.println(getName());
+            try {
+            	Random rd = new Random();
+            	int tmp = rd.nextInt(10);
+            	System.out.println(tmp);
+            	Thread.sleep(10);
+            } catch (InterruptedException ie) {
+                System.out.println(ie.toString());
+            }
+        System.out.println();
+    }
+ 
+    public static void main(String[] args) throws InterruptedException {
+    	FiveThreads t[] = new FiveThreads[5];
+    	for(int i=0 ;i < 5; i++)
+    	{
+    		FiveThreads t[i] = new FiveThreads("Thread" + String.valueOf(i));
+    	}
+        t1.start();
+ 
+        // Main Thread phải chờ 450ms mới được tiếp tục chạy.
+        // Không nhất thiết phải chờ Thread t1 kết thúc
+        t1.join(450);
+        t2.start();
+    }
+}
