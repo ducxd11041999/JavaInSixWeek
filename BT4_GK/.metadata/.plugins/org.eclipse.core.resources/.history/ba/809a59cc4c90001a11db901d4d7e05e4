@@ -1,0 +1,8 @@
+package GK;
+
+public interface ActionShapes {
+	void inputInfo();
+	void DienTich();
+	void ChuVi();
+	String getName();
+}

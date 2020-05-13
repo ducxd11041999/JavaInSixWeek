@@ -1,0 +1,50 @@
+package GK;
+
+
+import java.text.DecimalFormat;
+
+public class RectangleClass implements ActionShapes{
+
+	double w = 0, h = 0;
+	String name = "Hinh CN";
+	public String getName()
+	{
+		return name;
+	}
+	void setData(int W, int H)
+	{
+		w = W;
+		h = H;
+	}
+	public  RectangleClass() {
+		w = 0;
+		h = 0;
+	}
+	public RectangleClass(int W, int H) {
+		// TODO Auto-generated constructor stub
+		w = W;
+		h = H;
+	}
+	@Override
+	public void Area() {
+		// TODO Auto-generated method stub
+		double pe = w*h;
+		DecimalFormat fmt=new DecimalFormat("0.##");
+		System.out.print("Dien tich HCN la : " + fmt.format(pe));
+	}
+
+	@Override
+	public void Perimeter() {
+		// TODO Auto-generated method stub
+		double ac = (w+h)*2;
+		DecimalFormat fmt=new DecimalFormat("0.##");
+		System.out.print("Chu vi HCN la : " + fmt.format(ac));
+	}
+	@Override
+	public void getInfo() {
+		// TODO Auto-generated method stub
+		System.out.println("Width = "+ w);
+		System.out.println("Lenght = "+ a);
+	}
+
+}

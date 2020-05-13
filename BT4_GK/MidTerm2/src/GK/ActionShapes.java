@@ -1,0 +1,8 @@
+package GK;
+
+public interface ActionShapes {
+	void Area();
+	void Perimeter();
+	String getName();
+	void getInfo();
+}
